@@ -1,0 +1,71 @@
+.our_advantages
+    overflow hidden
+    text-align center
+    
+.advantages_item
+    display inline-block
+    margin-bottom 20px
+    padding 5px
+    width 32%
+    border 1px solid lightPinkColor
+    border-radius 5px
+    &:first-child
+        float left
+    &:last-child
+        float right
+
+.advantages_item-inner
+    position relative
+    padding 10px 0 20px 115px
+    text-align left
+    background-color lightPinkColor
+    a
+        font-family italicFont,sans-serif
+        font-size 1.1rem
+        text-decoration underline
+    
+.adv_name
+    display block
+    margin-bottom 5px
+    color orangeColor
+    font-size 1.6rem
+    line-height 1.1
+    font-family italicFont,sans-serif
+
+.adv_icon
+    position absolute
+    left 5px
+    top 50%
+
+.adv_icon-registration
+    display block
+    width 108px
+    height 77px
+    margin-top -40px
+    background url('../img/icons/registration.png') 0 0 no-repeat
+    
+.adv_icon-price
+    display block
+    width 96px
+    height 96px
+    margin-top -50px
+    background url('../img/icons/wallet.png') 0 0 no-repeat
+    
+.adv_icon-place
+    display block
+    width 94px
+    height 94px
+    margin-top -45px
+    background url('../img/icons/world.png') 0 0 no-repeat
+
+.icon1
+    display block
+    sprite($s-email)
+    
+.icon2
+    display block
+    sprite($s-error)
+    
+.icon3
+    display block
+    sprite($s-user)

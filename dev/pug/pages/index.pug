@@ -1,6 +1,32 @@
-extends ../layout/main
+extends ../layout/layout
 
 block title
-	| Главная страница
+    | Главная страница
 
 block content
+    section.our_advantages
+        .advantages_item
+            .advantages_item-inner
+                span.adv_icon.adv_icon-registration
+                span.adv_name Забег проводится в Москве
+                a(href="javascript:void(0);") Регистрация на забег 
+
+        .advantages_item
+            .advantages_item-inner
+                span.adv_icon.adv_icon-price
+                span.adv_name Участие в забеге от 300 рублей
+                a(href="javascript:void(0);") Как оплатить
+
+        .advantages_item
+            .advantages_item-inner
+                span.adv_icon.adv_icon-place
+                span.adv_name Возможно удаленное участие
+                a(href="javascript:void(0);") Информация
+
+
+    .test
+        p Lorem
+
+        span.icon1
+        span.icon2
+        span.icon3

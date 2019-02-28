@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'CarlitoRegular';
+    src: url('carlito/Carlito-Regular.woff2') format('woff2'),
+         url('carlito/Carlito-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CarlitoItalic';
+    src: url('carlito/Carlito-Italic.woff2') format('woff2'),
+         url('carlito/Carlito-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GlacialIndifferenceRegular';
+    src: url('glacial-indifference/GlacialIndifference-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PoppinsLight';
+    src: url('poppins/Poppins-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PoppinsExtraLight';
+    src: url('poppins/Poppins-ExtraLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SpaceMeatball';
+    src: url('space-meatball/SpaceMeatball.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}

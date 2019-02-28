@@ -23,15 +23,17 @@ gulp.task('stylus', function() {
         ])
         .pipe(plumber())
         .pipe(stylus({
-            'include css': true
+            'include css': true // , compress: true -> тогда на выходе унифицированный css будет
         }))
 
 
     .on("error", notify.onError(function(error) {
             return "Message to the notifier: " + error.message;
         }))
-        .pipe(autoprefixer(['last 2 version']))
-        .pipe(gulp.dest('dev/static/css'))
+        .pipe(autoprefixer(['last 15 version', '>1%', 'ie 8', 'ie 7'], {
+            cascade: true
+        }))
+        .pipe(gulp.dest('dev/static/css')) // куда должен файл складываться
         .pipe(browsersync.reload({
             stream: true
         }));
@@ -42,7 +44,7 @@ gulp.task('pug', function() {
     return gulp.src('dev/pug/pages/*.pug')
         .pipe(plumber())
         .pipe(pug({
-            pretty: true
+            pretty: true // не минифицированны
         }))
         .on("error", notify.onError(function(error) {
             return "Message to the notifier: " + error.message;
@@ -63,13 +65,14 @@ gulp.task('browsersync', function() {
 gulp.task('scripts', function() {
     return gulp.src([
             // Библиотеки
+            // если хочу подключить свою библиотеку, то сюда нужно прописать
             'dev/static/libs/magnific/jquery.magnific-popup.min.js',
             'dev/static/libs/bxslider/jquery.bxslider.min.js',
             'dev/static/libs/maskedinput/maskedinput.js',
             'dev/static/libs/slick/slick.min.js',
             'dev/static/libs/validate/jquery.validate.min.js'
         ])
-        .pipe(concat('libs.min.js'))
+        .pipe(concat('libs.min.js')) // все библиотеки добавляются в libs.min.js
         .pipe(uglify())
         .pipe(gulp.dest('dev/static/js'))
         .pipe(browsersync.reload({
@@ -90,7 +93,7 @@ gulp.task('spritemade', function() {
         .pipe(spritesmith({
             imgName: 'sprite.png',
             cssName: '_sprite.styl',
-            padding: 15,
+            padding: 15, // паддинг между картинками
             cssFormat: 'stylus',
             algorithm: 'binary-tree',
             cssTemplate: 'stylus.template.mustache',
@@ -128,7 +131,7 @@ gulp.task('img', function() {
 });
 
 // Сборка проекта
-
+// папку product можно поменять
 gulp.task('build', ['clean', 'img', 'stylus', 'scripts'], function() {
     var buildCss = gulp.src('dev/static/css/*.css')
         .pipe(gulp.dest('product/static/css'));
